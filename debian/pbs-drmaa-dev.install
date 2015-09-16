@@ -1,0 +1,2 @@
+usr/lib/pbs-drmaa/lib/lib*.so
+usr/lib/pbs-drmaa/include/*

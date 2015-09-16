@@ -1,0 +1,14 @@
+Author: Steven Chamberlain <steven@pyro.eu.org>
+Description: use POSIX-recommended macro to check file type
+
+--- a/pbs_drmaa/job.c
++++ b/pbs_drmaa/job.c
+@@ -401,7 +401,7 @@
+ 		struct stat tmpstat;
+ 
+ 		fsd_log_error(("Failed to open job status file: %s", status_file));
+-		if (stat(start_file, &tmpstat) == 0 && (tmpstat.st_mode & S_IFREG))
++		if (stat(start_file, &tmpstat) == 0 && S_ISREG(tmpstat.st_mode))
+ 		 {
+ 			exit_status = 143; /* SIGTERM */
+ 			fsd_log_info(("But start file exist %s. Assuming that job was killed (exit_status=%d).", start_file, exit_status));

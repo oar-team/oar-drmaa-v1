@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+%:
+	dh $@ --with autoreconf
+
+override_dh_auto_configure:
+	./configure --prefix=/usr/lib/pbs-drmaa
+
+get-orig-source:
+        # Uscan will read debian/watch, grab the correct version, repack, and leave it in the
+        # current directory
+	uscan --noconf --force-download --rename --repack --download-current-version --destdir=.

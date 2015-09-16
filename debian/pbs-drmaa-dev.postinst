@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+update-alternatives \
+        --install /usr/lib/libdrmaa.so libdrmaa.so /usr/lib/pbs-drmaa/lib/libdrmaa.so 30 \
+	--slave /usr/include/drmaa.h drmaa.h /usr/lib/pbs-drmaa/include/drmaa.h
+
+#DEBHELPER#
+
+exit 0
