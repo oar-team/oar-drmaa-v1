@@ -1,3 +1,4 @@
 version=3
 
-http://sf.net/pbspro-drmaa/pbs-drmaa-(.*)\.tar\.gz
+opts=filenamemangle=s/.+\/v?(\d\S*)\.tar\.gz/oar-drmaa-$1\.tar\.gz/ \
+  https://github.com/oar-team/oar-drmaa-v1/tags .*/v?(\d\S*)\.tar\.gz

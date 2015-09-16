@@ -1,30 +1,29 @@
-Source: pbs-drmaa
+Source: oar-drmaa
 Priority: optional
-Maintainer: Dominique Belhachemi <domibel@debian.org>
+Maintainer: Pierre Neyron <pierre.neyron@frere.fr>
+Uploaders: Vincent Danjean <vdanjean@debian.org>
 Build-Depends: debhelper (>= 7.0.50~), dh-autoreconf, bison, gperf, ragel, libtorque2-dev
 Standards-Version: 3.9.5
 Section: libs
-Homepage: http://sourceforge.net/projects/pbspro-drmaa/
-Vcs-Browser: http://anonscm.debian.org/viewvc/pkg-escience/pbs-drmaa/trunk/
-Vcs-Svn: svn://anonscm.debian.org//pkg-escience/pbs-drmaa/trunk/
+Homepage: https://github.com/oar-team/oar-drmaa-v1/blob/master/doc_drmaa1.rst
 
-Package: pbs-drmaa-dev
+Package: oar-drmaa-dev
 Section: libdevel
 Architecture: any
 Conflicts: libdrmaa-dev (<< 6.2u5-3)
-Depends: pbs-drmaa1 (= ${binary:Version}), ${misc:Depends}
+Depends: oar-drmaa1 (= ${binary:Version}), ${misc:Depends}
 Description: DRMAA for Torque/PBS Pro - devel
- DRMAA for Torque/PBS Pro library is an implementation of OGF DRMAA 1.0
+ DRMAA for OAR is an implementation of OGF DRMAA 1.0
  (Distributed Resource Management Application API) specification for the
- submission of jobs to Torque and PBS Professional systems.
+ submission of jobs to OAR systems.
  .
- This package contains the development files for pbs-drmaa.
+ This package contains the development files for oar-drmaa.
 
-Package: pbs-drmaa1
+Package: oar-drmaa1
 Architecture: any
 Conflicts: libdrmaa1.0 (<< 6.2u5-3)
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: DRMAA for Torque/PBS Pro - runtime
- DRMAA for Torque/PBS Pro library is an implementation of OGF DRMAA 1.0
+ DRMAA for OAR is an implementation of OGF DRMAA 1.0
  (Distributed Resource Management Application API) specification for the
- submission of jobs to Torque and PBS Professional systems.
+ submission of jobs to OAR systems.
