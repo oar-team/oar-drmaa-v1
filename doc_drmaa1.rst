@@ -3,9 +3,9 @@ DRMAAv1 for OAR
 ===============
 
 :Authors: Olivier Richard <olivier.richard _at_ imag _ fr>  
-:Contact: <oar-contact@lists.gforge.inria.fr>
+:Contact: <oar-users@lists.gforge.inria.fr>
 
-:Copyright:     Copyright (C) 2012 Joseph Fourier University - France for specific OAR parts.
+:Copyright:     Copyright (C) 2012 Joseph Fourier University - France for OAR specific parts.
                 Copyright (C) 2006-2008 FedStage Systems for other parts.
 
 
@@ -62,13 +62,13 @@ To compile the library just go to main source directory and type::
 Configuration
 =============
 
-This librairy exploits the `OAR Restful API`_ to communicate with OAR system. The machine where DRMAA will be use must have access to the server API (see `OAR Restful API`_ documentation). By default the location of the API is ``http://localhost/oarapi``, it can be change by ``OAR_API_SERVER_URL`` environment variable.  
+This librairy exploits the `OAR Restful API`_ to communicate with OAR core system. The machine where DRMAA is used must have access to the API server (see `OAR Restful API`_ documentation for the Apache configuration). By default the location of the API is ``http://localhost/oarapi``. It can be changed by using the ``OAR_API_SERVER_URL`` environment variable.  
 
 
-During DRMAA session initialization (``drmaa_init``) library tries to read
-its configuration parameters from locations:
-``/etc/oar_drmaa.conf``, ``~/.oar_drmaa.conf`` and from file given in
-``OAR_DRMAA_CONF`` environment variable (if set to non-empty string).
+During DRMAA session initialization (``drmaa_init``) the library tries to read
+its configuration parameters from the following locations:
+``/etc/oar_drmaa.conf``, ``~/.oar_drmaa.conf`` and from file given in the
+``OAR_DRMAA_CONF`` environment variable.
 If multiple configuration sources are present then all configurations
 are merged with values from user-defined files taking precedence
 (in following order: ``$OAR_DRMAA_CONF``, ``~/.oar_drmaa.conf``,
@@ -211,7 +211,7 @@ Test-suite
 The DRMAA for OAR library was successfully tested with OAR_ 2.5.3 and 2.5.4 on Debian and Centos.  Following
 table presents results of tests from `Official DRMAA test-suite`_ (originally developed for Sun Grid Engine).
 
-Note, the test with Suspending/Resuming job test require the ``USERS_ALLOWED_HOLD_RESUME="yes"`` is set on frontend's  OAR configuration file (`oar.conf`).
+Note, the test with Suspending/Resuming job test requires the ``USERS_ALLOWED_HOLD_RESUME="yes"`` is set on frontend's  OAR configuration file (`oar.conf`).
 
 Known bugs and limitations
 ==========================
@@ -250,7 +250,7 @@ if you intend to develop DRMAA library for OAR or run tests:
  * curl
  * glib_json
 
-To initialize OAR DRMAA source files from OAR git repositoty go to ``sources/extra/oar-drmaa`` directory, launch ``./extract_from_pbs-drmaa_tgz.sh`` followed by  ``./autogen.sh``. To clean source files execute ``make clean`` and ``./extract_from_pbs-drmaa_tgz.sh rm``. 
+To initialize OAR DRMAA source files from OAR git repositoty, go to ``sources/extra/oar-drmaa`` directory, launch ``./extract_from_pbs-drmaa_tgz.sh`` followed by  ``./autogen.sh``. To clean source files execute ``make clean`` and ``./extract_from_pbs-drmaa_tgz.sh rm``. 
 
 .. _gperf:     http://www.gnu.org/software/gperf/
 
@@ -263,7 +263,7 @@ Contact and Bug Report
 
   For others concerns:
 
-      ``oar-contact _at_ lists.gforge.inria.fr``
+      ``olivier.richard@imag.fr``
 
 Acknowledgments
 ===============
@@ -290,6 +290,7 @@ License
 =======
 
 Copyright (C) 2012 Joseph Fourier University - France for OAR parts
+
 Copyright (C) 2006-2008 FedStage Systems for other parts
 
 This program is free software: you can redistribute it and/or modify
